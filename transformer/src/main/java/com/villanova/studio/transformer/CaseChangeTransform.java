@@ -10,7 +10,7 @@ public class CaseChangeTransform implements Transform {
     }
 
     public String reverseTransform(String input) {
-        String caseChangedString=forwardTransform(input);
+        String caseChangedString = forwardTransform(input);
         return caseChangedString;
     }
 }
