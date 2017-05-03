@@ -26,5 +26,20 @@ public class CaseChangeTransformTest {
         CaseChangeTransform c = new CaseChangeTransform();
         assertEquals("ABCXYZ", c.reverseTransform(input));
     } 
+ 
+
+ @Test
+ public void testForwardTransformWithWrapAndNonAlphaFailure() throws TransformerConfigurationException {
+     String input = "!abc xyz??";
+     CaseChangeTransform cc = new CaseChangeTransform();
+     assertEquals("!bcd yza??", cc.forwardTransform(input));
+ } 
+
+@Test
+ public void testReverseTransformWithWrapFailure() throws TransformerConfigurationException {    
+     String input = "abcxyz";
+     CaseChangeTransform c = new CaseChangeTransform();
+     assertEquals("zabwxy", c.reverseTransform(input));
+ } 
 
 }
